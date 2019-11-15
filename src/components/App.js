@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {addReminder} from '../actions';
+import '../css/style.css';
 
 class App extends Component {
   constructor(props){
