@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addReminder, deleteReminder} from '../actions';
+import {addReminder, deleteReminder, clearReminders} from '../actions';
 import '../css/style.css';
 import moment from 'moment';
 
@@ -78,6 +78,12 @@ class App extends Component {
           </button>
         </div>
           {this.renderReminders()}
+        <div
+          className="btn btn-danger"
+          onClick={()=>this.props.clearReminders()}
+        >
+          Clear Reminder
+        </div>
       </div>
     );
   }
@@ -95,4 +101,4 @@ function mapStateToProps(state){
 //since we are only adding addReminder so instead of having a whole mapDispatchToProps function
 // we can simply have an object here and place addReminder as key and value below
 
-export default connect(mapStateToProps,{addReminder,deleteReminder})(App);
+export default connect(mapStateToProps,{addReminder,deleteReminder, clearReminders})(App);
